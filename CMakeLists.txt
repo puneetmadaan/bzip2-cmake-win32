@@ -74,12 +74,12 @@ if(MSVC)
     set(VER_INTERNALNAME_STR ${local_lib_name})
     set(VER_FILEDESCRIPTION_STR "${local_lib_name} Dynamic Link Library")
     configure_file(
-         ${CMAKE_SOURCE_DIR}/version.rc.cmakein
+         ${CMAKE_CURRENT_SOURCE_DIR}/version.rc.cmakein
          ${CMAKE_CURRENT_BINARY_DIR}/version.rc
          @ONLY
      )         
     set(bzip2_DLLSRCS
-        ${CMAKE_SOURCE_DIR}/libbz2.def
+        ${CMAKE_CURRENT_SOURCE_DIR}/libbz2.def
         ${CMAKE_CURRENT_BINARY_DIR}/version.rc
     )  
 endif(MSVC)
