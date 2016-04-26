@@ -111,6 +111,8 @@ install(TARGETS bz2 bzip2recover bzip2_bin
     LIBRARY DESTINATION lib
     PUBLIC_HEADER DESTINATION include
     )
+	
+export ( TARGETS bz2 bzip2recover bzip2_bin FILE ${PROJECT_NAME}-config.cmake )
 
 file(GLOB man1 ${bzip2_SOURCE_DIR}/*.1)
 
@@ -195,6 +197,8 @@ add_test(NAME decompress_block_size_3
     )
     
 endif()
+
+export ( PACKAGE ${PROJECT_NAME} )
 
 # echo EXPORTS > bzip2.def
 # nm bzip2.dll | grep ' T _' | sed 's/.* T _//' >> bzip2.def
